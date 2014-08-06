@@ -1,0 +1,15 @@
+simples-m2.Server.Properties.Service.lsml
+simples-m2.Server.Properties.DataSources.ApplicationData.lsml
+simples-m2.Server.DataSources.ApplicationData.SeguradosSet.lsml
+simples-m2.Server.DataSources.ApplicationData.EnderecoSeguradoes.lsml
+simples-m2.Server.DataSources.ApplicationData.EmailSeguradoes.lsml
+simples-m2.Server.DataSources.ApplicationData.TelefonesSeguradoes.lsml
+simples-m2.Server.DataSources.ApplicationData.CelularSeguradoes.lsml
+simples-m2.Server.DataSources.ApplicationData.CorretoresSet.lsml
+simples-m2.Server.DataSources.ApplicationData.EnderecoCorretoresSet.lsml
+simples-m2.Server.DataSources.ApplicationData.TelefonesCorretoresSet.lsml
+simples-m2.Server.DataSources.ApplicationData.EmailCorretoresSet.lsml
+simples-m2.Server.DataSources.ApplicationData.CelularCorretoresSet.lsml
+simples-m2.Server.DataSources.ApplicationData.BancosCorretoresSet.lsml
+simples-m2.Server.DataSources.ApplicationData.RamosSet.lsml
+simples-m2.Server.DataSources.ApplicationData.Table1Items.lsml

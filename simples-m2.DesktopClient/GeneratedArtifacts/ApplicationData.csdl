@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Segurados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Segurado" Type="Edm.String" MaxLength="255" />
+    <Property Name="Fisica" Type="Edm.Boolean" />
+    <Property Name="Juridica" Type="Edm.Boolean" />
+    <Property Name="CpfCnpj" Type="Edm.String" MaxLength="255" />
+    <Property Name="Rg" Type="Edm.String" MaxLength="255" />
+    <Property Name="DataExpedicao" Type="Edm.DateTime" />
+    <Property Name="OrgaoExpedicao" Type="Edm.String" MaxLength="255" />
+    <Property Name="DataNascimento" Type="Edm.DateTime" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="CelularSeguradoes" Relationship="LightSwitchApplication.CelularSegurado_Segurados" ToRole="CelularSegurado" FromRole="Segurados" />
+    <NavigationProperty Name="EmailSeguradoes" Relationship="LightSwitchApplication.EmailSegurado_Segurados" ToRole="EmailSegurado" FromRole="Segurados" />
+    <NavigationProperty Name="EnderecoSeguradoes" Relationship="LightSwitchApplication.EnderecoSegurado_Segurados" ToRole="EnderecoSegurado" FromRole="Segurados" />
+    <NavigationProperty Name="TelefonesSeguradoes" Relationship="LightSwitchApplication.TelefonesSegurado_Segurados" ToRole="TelefonesSegurado" FromRole="Segurados" />
+  </EntityType>
+  <EntityType Name="EnderecoSegurado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rua" Type="Edm.String" MaxLength="255" />
+    <Property Name="Bairro" Type="Edm.String" MaxLength="255" />
+    <Property Name="Numero" Type="Edm.Int32" />
+    <Property Name="Complemento" Type="Edm.String" MaxLength="255" />
+    <Property Name="Cidade" Type="Edm.String" MaxLength="255" />
+    <Property Name="UF" Type="Edm.String" MaxLength="255" />
+    <Property Name="CEP" Type="Edm.String" MaxLength="255" />
+    <Property Name="Fiscal" Type="Edm.Boolean" />
+    <Property Name="EnderecoSegurado_Segurados" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Segurados" Relationship="LightSwitchApplication.EnderecoSegurado_Segurados" ToRole="Segurados" FromRole="EnderecoSegurado" />
+  </EntityType>
+  <EntityType Name="EmailSegurado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="EmailSegurado_Segurados1" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Segurados" Relationship="LightSwitchApplication.EmailSegurado_Segurados" ToRole="Segurados" FromRole="EmailSegurado" />
+  </EntityType>
+  <EntityType Name="TelefonesSegurado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Telefone" Type="Edm.String" MaxLength="255" />
+    <Property Name="Comercial" Type="Edm.Boolean" />
+    <Property Name="Recados" Type="Edm.Boolean" />
+    <Property Name="TelefonesSegurado_Segurados1" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Segurados" Relationship="LightSwitchApplication.TelefonesSegurado_Segurados" ToRole="Segurados" FromRole="TelefonesSegurado" />
+  </EntityType>
+  <EntityType Name="CelularSegurado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Celular" Type="Edm.String" MaxLength="255" />
+    <Property Name="Comercial" Type="Edm.Boolean" />
+    <Property Name="Recados" Type="Edm.Boolean" />
+    <Property Name="Nextel" Type="Edm.Boolean" />
+    <Property Name="CelularSegurado_Segurados" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Segurados" Relationship="LightSwitchApplication.CelularSegurado_Segurados" ToRole="Segurados" FromRole="CelularSegurado" />
+  </EntityType>
+  <EntityType Name="Corretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Corretor" Type="Edm.String" MaxLength="145" />
+    <Property Name="DataNascimento" Type="Edm.DateTime" />
+    <Property Name="Rg" Type="Edm.String" MaxLength="255" />
+    <Property Name="DataExpedicao" Type="Edm.DateTime" />
+    <Property Name="OrgaoExpedicao" Type="Edm.String" MaxLength="255" />
+    <Property Name="CpfCnpj" Type="Edm.String" MaxLength="255" />
+    <Property Name="Susep" Type="Edm.String" MaxLength="255" />
+    <Property Name="CodChub" Type="Edm.String" MaxLength="255" />
+    <Property Name="LoginPortal" Type="Edm.String" MaxLength="255" />
+    <Property Name="SenhaPortal" Type="Edm.String" MaxLength="255" />
+    <Property Name="LoginExtranet" Type="Edm.String" MaxLength="255" />
+    <Property Name="SenhaExtranet" Type="Edm.String" MaxLength="255" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="BancosCorretoresCollection" Relationship="LightSwitchApplication.BancosCorretores_Corretores" ToRole="BancosCorretores" FromRole="Corretores" />
+    <NavigationProperty Name="CelularCorretoresCollection" Relationship="LightSwitchApplication.CelularCorretores_Corretores" ToRole="CelularCorretores" FromRole="Corretores" />
+    <NavigationProperty Name="EmailCorretoresCollection" Relationship="LightSwitchApplication.EmailCorretores_Corretores" ToRole="EmailCorretores" FromRole="Corretores" />
+    <NavigationProperty Name="EnderecoCorretoresCollection" Relationship="LightSwitchApplication.EnderecoCorretores_Corretores" ToRole="EnderecoCorretores" FromRole="Corretores" />
+    <NavigationProperty Name="TelefonesCorretoresCollection" Relationship="LightSwitchApplication.TelefonesCorretores_Corretores" ToRole="TelefonesCorretores" FromRole="Corretores" />
+  </EntityType>
+  <EntityType Name="EnderecoCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rua" Type="Edm.String" MaxLength="255" />
+    <Property Name="Bairro" Type="Edm.String" MaxLength="255" />
+    <Property Name="Numero" Type="Edm.Int32" />
+    <Property Name="Complemento" Type="Edm.String" MaxLength="255" />
+    <Property Name="Cidade" Type="Edm.String" MaxLength="255" />
+    <Property Name="UF" Type="Edm.String" MaxLength="255" />
+    <Property Name="CEP" Type="Edm.String" MaxLength="255" />
+    <Property Name="Fiscal" Type="Edm.Boolean" />
+    <Property Name="EnderecoCorretores_Corretores" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Corretores" Relationship="LightSwitchApplication.EnderecoCorretores_Corretores" ToRole="Corretores" FromRole="EnderecoCorretores" />
+  </EntityType>
+  <EntityType Name="TelefonesCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Telefone" Type="Edm.String" MaxLength="255" />
+    <Property Name="Comercial" Type="Edm.Boolean" />
+    <Property Name="Recados" Type="Edm.Boolean" />
+    <Property Name="TelefonesCorretores_Corretores" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Corretores" Relationship="LightSwitchApplication.TelefonesCorretores_Corretores" ToRole="Corretores" FromRole="TelefonesCorretores" />
+  </EntityType>
+  <EntityType Name="EmailCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="Edm.String" MaxLength="255" />
+    <Property Name="EmailCorretores_Corretores" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Corretores" Relationship="LightSwitchApplication.EmailCorretores_Corretores" ToRole="Corretores" FromRole="EmailCorretores" />
+  </EntityType>
+  <EntityType Name="CelularCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Celular" Type="Edm.String" MaxLength="255" />
+    <Property Name="Comercial" Type="Edm.Boolean" />
+    <Property Name="Recados" Type="Edm.Boolean" />
+    <Property Name="Nextel" Type="Edm.Boolean" />
+    <Property Name="CelularCorretores_Corretores" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Corretores" Relationship="LightSwitchApplication.CelularCorretores_Corretores" ToRole="Corretores" FromRole="CelularCorretores" />
+  </EntityType>
+  <EntityType Name="BancosCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Agencia" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Conta" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="BancosCorretores_Corretores" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Corretores" Relationship="LightSwitchApplication.BancosCorretores_Corretores" ToRole="Corretores" FromRole="BancosCorretores" />
+  </EntityType>
+  <EntityType Name="Ramos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Descricao" Type="Edm.String" MaxLength="255" />
+    <Property Name="Comissao" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="9" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="PropostasHeader">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeroProposta" Type="Edm.Int32" Nullable="false" />
+    <Property Name="InicioVigencia" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="FimViegncia" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="DataCotacao" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Association Name="CelularSegurado_Segurados">
+    <End Role="Segurados" Type="LightSwitchApplication.Segurados" Multiplicity="1" />
+    <End Role="CelularSegurado" Type="LightSwitchApplication.CelularSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CelularSegurado">
+        <PropertyRef Name="CelularSegurado_Segurados" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmailSegurado_Segurados">
+    <End Role="Segurados" Type="LightSwitchApplication.Segurados" Multiplicity="1" />
+    <End Role="EmailSegurado" Type="LightSwitchApplication.EmailSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmailSegurado">
+        <PropertyRef Name="EmailSegurado_Segurados1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EnderecoSegurado_Segurados">
+    <End Role="Segurados" Type="LightSwitchApplication.Segurados" Multiplicity="1" />
+    <End Role="EnderecoSegurado" Type="LightSwitchApplication.EnderecoSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EnderecoSegurado">
+        <PropertyRef Name="EnderecoSegurado_Segurados" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TelefonesSegurado_Segurados">
+    <End Role="Segurados" Type="LightSwitchApplication.Segurados" Multiplicity="1" />
+    <End Role="TelefonesSegurado" Type="LightSwitchApplication.TelefonesSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TelefonesSegurado">
+        <PropertyRef Name="TelefonesSegurado_Segurados1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BancosCorretores_Corretores">
+    <End Role="Corretores" Type="LightSwitchApplication.Corretores" Multiplicity="1" />
+    <End Role="BancosCorretores" Type="LightSwitchApplication.BancosCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BancosCorretores">
+        <PropertyRef Name="BancosCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CelularCorretores_Corretores">
+    <End Role="Corretores" Type="LightSwitchApplication.Corretores" Multiplicity="1" />
+    <End Role="CelularCorretores" Type="LightSwitchApplication.CelularCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CelularCorretores">
+        <PropertyRef Name="CelularCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmailCorretores_Corretores">
+    <End Role="Corretores" Type="LightSwitchApplication.Corretores" Multiplicity="1" />
+    <End Role="EmailCorretores" Type="LightSwitchApplication.EmailCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmailCorretores">
+        <PropertyRef Name="EmailCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EnderecoCorretores_Corretores">
+    <End Role="Corretores" Type="LightSwitchApplication.Corretores" Multiplicity="1" />
+    <End Role="EnderecoCorretores" Type="LightSwitchApplication.EnderecoCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EnderecoCorretores">
+        <PropertyRef Name="EnderecoCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TelefonesCorretores_Corretores">
+    <End Role="Corretores" Type="LightSwitchApplication.Corretores" Multiplicity="1" />
+    <End Role="TelefonesCorretores" Type="LightSwitchApplication.TelefonesCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TelefonesCorretores">
+        <PropertyRef Name="TelefonesCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="SeguradosSet" EntityType="LightSwitchApplication.Segurados" />
+    <EntitySet Name="EnderecoSeguradoes" EntityType="LightSwitchApplication.EnderecoSegurado" />
+    <EntitySet Name="EmailSeguradoes" EntityType="LightSwitchApplication.EmailSegurado" />
+    <EntitySet Name="TelefonesSeguradoes" EntityType="LightSwitchApplication.TelefonesSegurado" />
+    <EntitySet Name="CelularSeguradoes" EntityType="LightSwitchApplication.CelularSegurado" />
+    <EntitySet Name="CorretoresSet" EntityType="LightSwitchApplication.Corretores" />
+    <EntitySet Name="EnderecoCorretoresSet" EntityType="LightSwitchApplication.EnderecoCorretores" />
+    <EntitySet Name="TelefonesCorretoresSet" EntityType="LightSwitchApplication.TelefonesCorretores" />
+    <EntitySet Name="EmailCorretoresSet" EntityType="LightSwitchApplication.EmailCorretores" />
+    <EntitySet Name="CelularCorretoresSet" EntityType="LightSwitchApplication.CelularCorretores" />
+    <EntitySet Name="BancosCorretoresSet" EntityType="LightSwitchApplication.BancosCorretores" />
+    <EntitySet Name="RamosSet" EntityType="LightSwitchApplication.Ramos" />
+    <EntitySet Name="PropostasHeaders" EntityType="LightSwitchApplication.PropostasHeader" />
+    <AssociationSet Name="CelularSegurado_Segurados" Association="LightSwitchApplication.CelularSegurado_Segurados">
+      <End Role="Segurados" EntitySet="SeguradosSet" />
+      <End Role="CelularSegurado" EntitySet="CelularSeguradoes" />
+    </AssociationSet>
+    <AssociationSet Name="EmailSegurado_Segurados" Association="LightSwitchApplication.EmailSegurado_Segurados">
+      <End Role="Segurados" EntitySet="SeguradosSet" />
+      <End Role="EmailSegurado" EntitySet="EmailSeguradoes" />
+    </AssociationSet>
+    <AssociationSet Name="EnderecoSegurado_Segurados" Association="LightSwitchApplication.EnderecoSegurado_Segurados">
+      <End Role="Segurados" EntitySet="SeguradosSet" />
+      <End Role="EnderecoSegurado" EntitySet="EnderecoSeguradoes" />
+    </AssociationSet>
+    <AssociationSet Name="TelefonesSegurado_Segurados" Association="LightSwitchApplication.TelefonesSegurado_Segurados">
+      <End Role="Segurados" EntitySet="SeguradosSet" />
+      <End Role="TelefonesSegurado" EntitySet="TelefonesSeguradoes" />
+    </AssociationSet>
+    <AssociationSet Name="BancosCorretores_Corretores" Association="LightSwitchApplication.BancosCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="BancosCorretores" EntitySet="BancosCorretoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="CelularCorretores_Corretores" Association="LightSwitchApplication.CelularCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="CelularCorretores" EntitySet="CelularCorretoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmailCorretores_Corretores" Association="LightSwitchApplication.EmailCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="EmailCorretores" EntitySet="EmailCorretoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="EnderecoCorretores_Corretores" Association="LightSwitchApplication.EnderecoCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="EnderecoCorretores" EntitySet="EnderecoCorretoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="TelefonesCorretores_Corretores" Association="LightSwitchApplication.TelefonesCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="TelefonesCorretores" EntitySet="TelefonesCorretoresSet" />
+    </AssociationSet>
+    <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
+      <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

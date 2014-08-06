@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Corretores">
+    <EntityType.Attributes>
+      <CreatedModifiedPropertiesEnabled />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Corretor"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="145" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DataNascimento"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Rg"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DataExpedicao"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OrgaoExpedicao"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CpfCnpj"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Susep"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CodChub"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LoginPortal"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SenhaPortal"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LoginExtranet"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SenhaExtranet"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="BancosCorretoresCollection"
+        Association="BancosCorretores_Corretores"
+        FromEnd="Corretores"
+        ToEnd="BancosCorretores" />
+      <NavigationProperty
+        Name="CelularCorretoresCollection"
+        Association="CelularCorretores_Corretores"
+        FromEnd="Corretores"
+        ToEnd="CelularCorretores" />
+      <NavigationProperty
+        Name="EmailCorretoresCollection"
+        Association="EmailCorretores_Corretores"
+        FromEnd="Corretores"
+        ToEnd="EmailCorretores" />
+      <NavigationProperty
+        Name="EnderecoCorretoresCollection"
+        Association="EnderecoCorretores_Corretores"
+        FromEnd="Corretores"
+        ToEnd="EnderecoCorretores" />
+      <NavigationProperty
+        Name="TelefonesCorretoresCollection"
+        Association="TelefonesCorretores_Corretores"
+        FromEnd="Corretores"
+        ToEnd="TelefonesCorretores" />
+      <EntityProperty
+        Name="CreatedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="ApplicationData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="CorretoresSet"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Corretores" />
+    <QueryOperation
+      Name="CorretoresSet_Single"
+      ReturnType="Corretores">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CorretoresSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CorretoresSet_SingleOrDefault"
+      ReturnType="Corretores">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CorretoresSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="BancosCorretores_CorretoresSet"
+      Association="BancosCorretores_Corretores">
+      <AssociationSetEnd
+        Name="BancosCorretores"
+        EntitySet="BancosCorretoresSet" />
+      <AssociationSetEnd
+        Name="Corretores"
+        EntitySet="CorretoresSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="CelularCorretores_CorretoresSet"
+      Association="CelularCorretores_Corretores">
+      <AssociationSetEnd
+        Name="CelularCorretores"
+        EntitySet="CelularCorretoresSet" />
+      <AssociationSetEnd
+        Name="Corretores"
+        EntitySet="CorretoresSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="EmailCorretores_CorretoresSet"
+      Association="EmailCorretores_Corretores">
+      <AssociationSetEnd
+        Name="EmailCorretores"
+        EntitySet="EmailCorretoresSet" />
+      <AssociationSetEnd
+        Name="Corretores"
+        EntitySet="CorretoresSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="EnderecoCorretores_CorretoresSet"
+      Association="EnderecoCorretores_Corretores">
+      <AssociationSetEnd
+        Name="EnderecoCorretores"
+        EntitySet="EnderecoCorretoresSet" />
+      <AssociationSetEnd
+        Name="Corretores"
+        EntitySet="CorretoresSet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="TelefonesCorretores_CorretoresSet"
+      Association="TelefonesCorretores_Corretores">
+      <AssociationSetEnd
+        Name="TelefonesCorretores"
+        EntitySet="TelefonesCorretoresSet" />
+      <AssociationSetEnd
+        Name="Corretores"
+        EntitySet="CorretoresSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association
+    Name="BancosCorretores_Corretores">
+    <AssociationEnd
+      Name="BancosCorretores"
+      Multiplicity="Many"
+      EntityType="BancosCorretores" />
+    <AssociationEnd
+      Name="Corretores"
+      Multiplicity="One"
+      EntityType="Corretores">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <DataService
+    Name="ApplicationDataMapping">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <AssociationSetMapping
+      AssociationSet="BancosCorretores_CorretoresSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="BancosCorretores_CorretoresSet" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[BancosCorretores_CorretoresSet]/Members[BancosCorretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="BancosCorretores_Corretores" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[BancosCorretores_CorretoresSet]/Members[Corretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="CelularCorretores_CorretoresSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="CelularCorretores_CorretoresSet" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[CelularCorretores_CorretoresSet]/Members[CelularCorretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="CelularCorretores_Corretores" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[CelularCorretores_CorretoresSet]/Members[Corretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="EmailCorretores_CorretoresSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="EmailCorretores_CorretoresSet" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[EmailCorretores_CorretoresSet]/Members[EmailCorretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EmailCorretores_Corretores" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[EmailCorretores_CorretoresSet]/Members[Corretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="EnderecoCorretores_CorretoresSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="EnderecoCorretores_CorretoresSet" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[EnderecoCorretores_CorretoresSet]/Members[EnderecoCorretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EnderecoCorretores_Corretores" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[EnderecoCorretores_CorretoresSet]/Members[Corretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="TelefonesCorretores_CorretoresSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="TelefonesCorretores_CorretoresSet" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[TelefonesCorretores_CorretoresSet]/Members[TelefonesCorretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="TelefonesCorretores_Corretores" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[TelefonesCorretores_CorretoresSet]/Members[Corretores]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+  <Association
+    Name="CelularCorretores_Corretores">
+    <AssociationEnd
+      Name="CelularCorretores"
+      Multiplicity="Many"
+      EntityType="CelularCorretores" />
+    <AssociationEnd
+      Name="Corretores"
+      Multiplicity="One"
+      EntityType="Corretores">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="EmailCorretores_Corretores">
+    <AssociationEnd
+      Name="EmailCorretores"
+      Multiplicity="Many"
+      EntityType="EmailCorretores" />
+    <AssociationEnd
+      Name="Corretores"
+      Multiplicity="One"
+      EntityType="Corretores">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="EnderecoCorretores_Corretores">
+    <AssociationEnd
+      Name="EnderecoCorretores"
+      Multiplicity="Many"
+      EntityType="EnderecoCorretores" />
+    <AssociationEnd
+      Name="Corretores"
+      Multiplicity="One"
+      EntityType="Corretores">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="TelefonesCorretores_Corretores">
+    <AssociationEnd
+      Name="TelefonesCorretores"
+      Multiplicity="Many"
+      EntityType="TelefonesCorretores" />
+    <AssociationEnd
+      Name="Corretores"
+      Multiplicity="One"
+      EntityType="Corretores">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+</ServiceApplication>

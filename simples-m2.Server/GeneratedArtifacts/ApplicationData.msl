@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="ApplicationData" StorageEntityContainer="ApplicationDataStore">
+    <EntitySetMapping Name="SeguradosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Segurados)">
+        <MappingFragment StoreEntitySet="SeguradosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Segurado" ColumnName="Segurado" />
+          <ScalarProperty Name="Fisica" ColumnName="Fisica" />
+          <ScalarProperty Name="Juridica" ColumnName="Juridica" />
+          <ScalarProperty Name="CpfCnpj" ColumnName="CpfCnpj" />
+          <ScalarProperty Name="Rg" ColumnName="Rg" />
+          <ScalarProperty Name="DataExpedicao" ColumnName="DataExpedicao" />
+          <ScalarProperty Name="OrgaoExpedicao" ColumnName="OrgaoExpedicao" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnderecoSeguradoes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.EnderecoSegurado)">
+        <MappingFragment StoreEntitySet="EnderecoSeguradoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rua" ColumnName="Rua" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+          <ScalarProperty Name="Fiscal" ColumnName="Fiscal" />
+          <ScalarProperty Name="EnderecoSegurado_Segurados" ColumnName="EnderecoSegurado_Segurados" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailSeguradoes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.EmailSegurado)">
+        <MappingFragment StoreEntitySet="EmailSeguradoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="EmailSegurado_Segurados1" ColumnName="EmailSegurado_Segurados1" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TelefonesSeguradoes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TelefonesSegurado)">
+        <MappingFragment StoreEntitySet="TelefonesSeguradoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Comercial" ColumnName="Comercial" />
+          <ScalarProperty Name="Recados" ColumnName="Recados" />
+          <ScalarProperty Name="TelefonesSegurado_Segurados1" ColumnName="TelefonesSegurado_Segurados1" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CelularSeguradoes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.CelularSegurado)">
+        <MappingFragment StoreEntitySet="CelularSeguradoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Comercial" ColumnName="Comercial" />
+          <ScalarProperty Name="Recados" ColumnName="Recados" />
+          <ScalarProperty Name="Nextel" ColumnName="Nextel" />
+          <ScalarProperty Name="CelularSegurado_Segurados" ColumnName="CelularSegurado_Segurados" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorretoresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Corretores)">
+        <MappingFragment StoreEntitySet="CorretoresSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Corretor" ColumnName="Corretor" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+          <ScalarProperty Name="Rg" ColumnName="Rg" />
+          <ScalarProperty Name="DataExpedicao" ColumnName="DataExpedicao" />
+          <ScalarProperty Name="OrgaoExpedicao" ColumnName="OrgaoExpedicao" />
+          <ScalarProperty Name="CpfCnpj" ColumnName="CpfCnpj" />
+          <ScalarProperty Name="Susep" ColumnName="Susep" />
+          <ScalarProperty Name="CodChub" ColumnName="CodChub" />
+          <ScalarProperty Name="LoginPortal" ColumnName="LoginPortal" />
+          <ScalarProperty Name="SenhaPortal" ColumnName="SenhaPortal" />
+          <ScalarProperty Name="LoginExtranet" ColumnName="LoginExtranet" />
+          <ScalarProperty Name="SenhaExtranet" ColumnName="SenhaExtranet" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnderecoCorretoresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.EnderecoCorretores)">
+        <MappingFragment StoreEntitySet="EnderecoCorretoresSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rua" ColumnName="Rua" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+          <ScalarProperty Name="Fiscal" ColumnName="Fiscal" />
+          <ScalarProperty Name="EnderecoCorretores_Corretores" ColumnName="EnderecoCorretores_Corretores" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TelefonesCorretoresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TelefonesCorretores)">
+        <MappingFragment StoreEntitySet="TelefonesCorretoresSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Comercial" ColumnName="Comercial" />
+          <ScalarProperty Name="Recados" ColumnName="Recados" />
+          <ScalarProperty Name="TelefonesCorretores_Corretores" ColumnName="TelefonesCorretores_Corretores" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailCorretoresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.EmailCorretores)">
+        <MappingFragment StoreEntitySet="EmailCorretoresSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="EmailCorretores_Corretores" ColumnName="EmailCorretores_Corretores" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CelularCorretoresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.CelularCorretores)">
+        <MappingFragment StoreEntitySet="CelularCorretoresSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Comercial" ColumnName="Comercial" />
+          <ScalarProperty Name="Recados" ColumnName="Recados" />
+          <ScalarProperty Name="Nextel" ColumnName="Nextel" />
+          <ScalarProperty Name="CelularCorretores_Corretores" ColumnName="CelularCorretores_Corretores" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BancosCorretoresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.BancosCorretores)">
+        <MappingFragment StoreEntitySet="BancosCorretoresSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+          <ScalarProperty Name="Conta" ColumnName="Conta" />
+          <ScalarProperty Name="BancosCorretores_Corretores" ColumnName="BancosCorretores_Corretores" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RamosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Ramos)">
+        <MappingFragment StoreEntitySet="RamosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Comissao" ColumnName="Comissao" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropostasHeaders">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.PropostasHeader)">
+        <MappingFragment StoreEntitySet="PropostasHeaders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumeroProposta" ColumnName="NumeroProposta" />
+          <ScalarProperty Name="InicioVigencia" ColumnName="InicioVigencia" />
+          <ScalarProperty Name="FimViegncia" ColumnName="FimViegncia" />
+          <ScalarProperty Name="DataCotacao" ColumnName="DataCotacao" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="SeguradosSet" EntityType="ApplicationDataStore.Segurados" store:Type="Tables" Schema="dbo" Table="SeguradosSet" />
+    <EntitySet Name="EnderecoSeguradoes" EntityType="ApplicationDataStore.EnderecoSegurado" store:Type="Tables" Schema="dbo" Table="EnderecoSeguradoes" />
+    <EntitySet Name="EmailSeguradoes" EntityType="ApplicationDataStore.EmailSegurado" store:Type="Tables" Schema="dbo" Table="EmailSeguradoes" />
+    <EntitySet Name="TelefonesSeguradoes" EntityType="ApplicationDataStore.TelefonesSegurado" store:Type="Tables" Schema="dbo" Table="TelefonesSeguradoes" />
+    <EntitySet Name="CelularSeguradoes" EntityType="ApplicationDataStore.CelularSegurado" store:Type="Tables" Schema="dbo" Table="CelularSeguradoes" />
+    <EntitySet Name="CorretoresSet" EntityType="ApplicationDataStore.Corretores" store:Type="Tables" Schema="dbo" Table="CorretoresSet" />
+    <EntitySet Name="EnderecoCorretoresSet" EntityType="ApplicationDataStore.EnderecoCorretores" store:Type="Tables" Schema="dbo" Table="EnderecoCorretoresSet" />
+    <EntitySet Name="TelefonesCorretoresSet" EntityType="ApplicationDataStore.TelefonesCorretores" store:Type="Tables" Schema="dbo" Table="TelefonesCorretoresSet" />
+    <EntitySet Name="EmailCorretoresSet" EntityType="ApplicationDataStore.EmailCorretores" store:Type="Tables" Schema="dbo" Table="EmailCorretoresSet" />
+    <EntitySet Name="CelularCorretoresSet" EntityType="ApplicationDataStore.CelularCorretores" store:Type="Tables" Schema="dbo" Table="CelularCorretoresSet" />
+    <EntitySet Name="BancosCorretoresSet" EntityType="ApplicationDataStore.BancosCorretores" store:Type="Tables" Schema="dbo" Table="BancosCorretoresSet" />
+    <EntitySet Name="RamosSet" EntityType="ApplicationDataStore.Ramos" store:Type="Tables" Schema="dbo" Table="RamosSet" />
+    <EntitySet Name="PropostasHeaders" EntityType="ApplicationDataStore.PropostasHeader" store:Type="Tables" Schema="dbo" Table="PropostasHeaders" />
+    <AssociationSet Name="CelularSegurado_Segurados" Association="ApplicationDataStore.CelularSegurado_Segurados">
+      <End Role="Segurados" EntitySet="SeguradosSet" />
+      <End Role="CelularSegurado" EntitySet="CelularSeguradoes" />
+    </AssociationSet>
+    <AssociationSet Name="EmailSegurado_Segurados" Association="ApplicationDataStore.EmailSegurado_Segurados">
+      <End Role="Segurados" EntitySet="SeguradosSet" />
+      <End Role="EmailSegurado" EntitySet="EmailSeguradoes" />
+    </AssociationSet>
+    <AssociationSet Name="EnderecoSegurado_Segurados" Association="ApplicationDataStore.EnderecoSegurado_Segurados">
+      <End Role="Segurados" EntitySet="SeguradosSet" />
+      <End Role="EnderecoSegurado" EntitySet="EnderecoSeguradoes" />
+    </AssociationSet>
+    <AssociationSet Name="TelefonesSegurado_Segurados" Association="ApplicationDataStore.TelefonesSegurado_Segurados">
+      <End Role="Segurados" EntitySet="SeguradosSet" />
+      <End Role="TelefonesSegurado" EntitySet="TelefonesSeguradoes" />
+    </AssociationSet>
+    <AssociationSet Name="BancosCorretores_Corretores" Association="ApplicationDataStore.BancosCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="BancosCorretores" EntitySet="BancosCorretoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="CelularCorretores_Corretores" Association="ApplicationDataStore.CelularCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="CelularCorretores" EntitySet="CelularCorretoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmailCorretores_Corretores" Association="ApplicationDataStore.EmailCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="EmailCorretores" EntitySet="EmailCorretoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="EnderecoCorretores_Corretores" Association="ApplicationDataStore.EnderecoCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="EnderecoCorretores" EntitySet="EnderecoCorretoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="TelefonesCorretores_Corretores" Association="ApplicationDataStore.TelefonesCorretores_Corretores">
+      <End Role="Corretores" EntitySet="CorretoresSet" />
+      <End Role="TelefonesCorretores" EntitySet="TelefonesCorretoresSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Segurados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Segurado" Type="nvarchar" MaxLength="255" />
+    <Property Name="Fisica" Type="bit" />
+    <Property Name="Juridica" Type="bit" />
+    <Property Name="CpfCnpj" Type="nvarchar" MaxLength="255" />
+    <Property Name="Rg" Type="nvarchar" MaxLength="255" />
+    <Property Name="DataExpedicao" Type="datetime" />
+    <Property Name="OrgaoExpedicao" Type="nvarchar" MaxLength="255" />
+    <Property Name="DataNascimento" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="EnderecoSegurado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Rua" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bairro" Type="nvarchar" MaxLength="255" />
+    <Property Name="Numero" Type="int" />
+    <Property Name="Complemento" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cidade" Type="nvarchar" MaxLength="255" />
+    <Property Name="UF" Type="nvarchar" MaxLength="255" />
+    <Property Name="CEP" Type="nvarchar" MaxLength="255" />
+    <Property Name="Fiscal" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="EnderecoSegurado_Segurados" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailSegurado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="EmailSegurado_Segurados1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TelefonesSegurado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Telefone" Type="nvarchar" MaxLength="255" />
+    <Property Name="Comercial" Type="bit" />
+    <Property Name="Recados" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="TelefonesSegurado_Segurados1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CelularSegurado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Celular" Type="nvarchar" MaxLength="255" />
+    <Property Name="Comercial" Type="bit" />
+    <Property Name="Recados" Type="bit" />
+    <Property Name="Nextel" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="CelularSegurado_Segurados" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Corretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Corretor" Type="nvarchar" MaxLength="145" />
+    <Property Name="DataNascimento" Type="datetime" />
+    <Property Name="Rg" Type="nvarchar" MaxLength="255" />
+    <Property Name="DataExpedicao" Type="datetime" />
+    <Property Name="OrgaoExpedicao" Type="nvarchar" MaxLength="255" />
+    <Property Name="CpfCnpj" Type="nvarchar" MaxLength="255" />
+    <Property Name="Susep" Type="nvarchar" MaxLength="255" />
+    <Property Name="CodChub" Type="nvarchar" MaxLength="255" />
+    <Property Name="LoginPortal" Type="nvarchar" MaxLength="255" />
+    <Property Name="SenhaPortal" Type="nvarchar" MaxLength="255" />
+    <Property Name="LoginExtranet" Type="nvarchar" MaxLength="255" />
+    <Property Name="SenhaExtranet" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="EnderecoCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Rua" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bairro" Type="nvarchar" MaxLength="255" />
+    <Property Name="Numero" Type="int" />
+    <Property Name="Complemento" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cidade" Type="nvarchar" MaxLength="255" />
+    <Property Name="UF" Type="nvarchar" MaxLength="255" />
+    <Property Name="CEP" Type="nvarchar" MaxLength="255" />
+    <Property Name="Fiscal" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="EnderecoCorretores_Corretores" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TelefonesCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Telefone" Type="nvarchar" MaxLength="255" />
+    <Property Name="Comercial" Type="bit" />
+    <Property Name="Recados" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="TelefonesCorretores_Corretores" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="EmailCorretores_Corretores" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CelularCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Celular" Type="nvarchar" MaxLength="255" />
+    <Property Name="Comercial" Type="bit" />
+    <Property Name="Recados" Type="bit" />
+    <Property Name="Nextel" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="CelularCorretores_Corretores" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BancosCorretores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Agencia" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Conta" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="BancosCorretores_Corretores" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ramos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Descricao" Type="nvarchar" MaxLength="255" />
+    <Property Name="Comissao" Type="decimal" Nullable="false" Precision="18" Scale="9" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="PropostasHeader">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NumeroProposta" Type="int" Nullable="false" />
+    <Property Name="InicioVigencia" Type="datetime" Nullable="false" />
+    <Property Name="FimViegncia" Type="datetime" Nullable="false" />
+    <Property Name="DataCotacao" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Association Name="CelularSegurado_Segurados">
+    <End Role="Segurados" Type="ApplicationDataStore.Segurados" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="CelularSegurado" Type="ApplicationDataStore.CelularSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CelularSegurado">
+        <PropertyRef Name="CelularSegurado_Segurados" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmailSegurado_Segurados">
+    <End Role="Segurados" Type="ApplicationDataStore.Segurados" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EmailSegurado" Type="ApplicationDataStore.EmailSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmailSegurado">
+        <PropertyRef Name="EmailSegurado_Segurados1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EnderecoSegurado_Segurados">
+    <End Role="Segurados" Type="ApplicationDataStore.Segurados" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EnderecoSegurado" Type="ApplicationDataStore.EnderecoSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EnderecoSegurado">
+        <PropertyRef Name="EnderecoSegurado_Segurados" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TelefonesSegurado_Segurados">
+    <End Role="Segurados" Type="ApplicationDataStore.Segurados" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="TelefonesSegurado" Type="ApplicationDataStore.TelefonesSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TelefonesSegurado">
+        <PropertyRef Name="TelefonesSegurado_Segurados1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BancosCorretores_Corretores">
+    <End Role="Corretores" Type="ApplicationDataStore.Corretores" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="BancosCorretores" Type="ApplicationDataStore.BancosCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BancosCorretores">
+        <PropertyRef Name="BancosCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CelularCorretores_Corretores">
+    <End Role="Corretores" Type="ApplicationDataStore.Corretores" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="CelularCorretores" Type="ApplicationDataStore.CelularCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CelularCorretores">
+        <PropertyRef Name="CelularCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmailCorretores_Corretores">
+    <End Role="Corretores" Type="ApplicationDataStore.Corretores" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EmailCorretores" Type="ApplicationDataStore.EmailCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmailCorretores">
+        <PropertyRef Name="EmailCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EnderecoCorretores_Corretores">
+    <End Role="Corretores" Type="ApplicationDataStore.Corretores" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EnderecoCorretores" Type="ApplicationDataStore.EnderecoCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EnderecoCorretores">
+        <PropertyRef Name="EnderecoCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TelefonesCorretores_Corretores">
+    <End Role="Corretores" Type="ApplicationDataStore.Corretores" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="TelefonesCorretores" Type="ApplicationDataStore.TelefonesCorretores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corretores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TelefonesCorretores">
+        <PropertyRef Name="TelefonesCorretores_Corretores" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
