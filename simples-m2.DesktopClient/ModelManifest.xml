@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Documents>
-    <Document FullPath="I:\GIT\simples-m2\simples-m2\simples-m2.DesktopClient\Properties\Client.lsml" Checksum="30BE8DD54789E96AA422C8B0C17862222DA867D89D99789C839E0425A392C67D" />
-    <Document FullPath="I:\GIT\simples-m2\simples-m2\simples-m2.DesktopClient\Properties\Proxies.lsml" Checksum="9595AA5A0A991475D2284E1B4C692B8FEEF218A04DDB4C6867FEC03DCB06F6FF" />
-  </Documents>
-</ModelDocumentManifest>
